@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2023-12-06T07:51:02.927Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="0E0JtqFpE6ickwMn3BTF" version="22.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-06T07:52:59.518Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="wz79Eet_Ucz1PXEObdI_" version="22.1.5" type="github">
   <diagram name="Page-1" id="74e2e168-ea6b-b213-b513-2b3c1d86103e">
     <mxGraphModel dx="1434" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="bOPhfKpZzqqKe66vDT6X-47" value="假设A和B中保存的数据是一致的，A和B间通过网络互访，且A和B在整个处理过程中无故障。&lt;br&gt;在A和B经过上述流程修改数据后，会出现三种结果：&lt;br&gt;1）如果A发送的修改数据消息未到达B，则A和B的中的数据都未修改，是一致的；&lt;br&gt;2）如果A发送的修改数据消息到达B，但是B发送的返回消息未到达A，则B的数据比A新，是不一致的；&lt;br&gt;3）如果A发送的修改数据消息达到B，同样B发送的返校消息达到B，则A和B中的数据都修改成新数据，是一致的。&lt;br&gt;&lt;br&gt;问题2和我们的期望不符，针对两种场景修正这种错误：&lt;br&gt;在全量修改场景下，用户A下发最新数据即可，用户B在处理时无需考虑幂等性；&lt;br&gt;在增量修改场景下，用户A保存数据变化量并生成单号，并支持重新下发增量数据，用户B在处理时需要支持幂等性；" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="10" y="390" width="620" height="150" as="geometry" />
+          <mxGeometry x="10" y="390" width="630" height="150" as="geometry" />
         </mxCell>
         <mxCell id="bOPhfKpZzqqKe66vDT6X-48" value="" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlActor;" vertex="1" parent="1">
           <mxGeometry x="100" y="60" width="20" height="300" as="geometry" />
